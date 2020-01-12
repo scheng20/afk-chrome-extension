@@ -1,0 +1,39 @@
+{
+    "name": "AFK",
+    "version": "1.0",
+    "description": "AFK Voice Commands (voice scroller)!",
+    "permissions": ["tabs", "activeTab", "declarativeContent", "storage"],
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+    },
+    
+    "page_action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "images/mouse16.png",
+        "32": "images/mouse32.png",
+        "48": "images/mouse48.png",
+        "128": "images/mouse128.png"
+      }
+    },
+
+    "icons": {
+      "16": "images/mouse16.png",
+      "32": "images/mouse32.png",
+      "48": "images/mouse48.png",
+      "128": "images/mouse128.png"
+    },
+
+    "content_scripts": [
+      {
+        "matches": [
+          "http://*/*",
+          "https://*/*"
+        ],
+        "js":["content.js"],
+        "runs_at":"document_end"
+      }
+    ],
+    "manifest_version": 2
+ }
