@@ -24,7 +24,7 @@
       "48": "images/mouse48.png",
       "128": "images/mouse128.png"
     },
-
+    
     "content_scripts": [
       {
         "matches": [
