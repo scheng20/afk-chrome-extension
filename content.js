@@ -62,14 +62,19 @@ recognition.onresult = function(event) {
         case "go up":
              window.scrollBy(0, -500);
             break;
+        case "scroll up":
+             window.scrollBy(0, -500);
+            break;
         case "go down":
+            window.scrollBy(0, 500);
+            break;
+          case "scroll down":
             window.scrollBy(0, 500);
             break;
 
         case "open tab":
             window.open('https://devpost.com/software/afk-bec9g1');
             break;
-
         case "new tab":
             window.open('https://devpost.com/software/afk-bec9g1');
             break;
@@ -89,7 +94,6 @@ recognition.onresult = function(event) {
         case "refresh":
              window.location.reload(true);
              break;
-
         case "reload":
             window.location.reload(true);
              break;
@@ -108,5 +112,13 @@ recognition.onnomatch = function(event) {
 }
 
 recognition.onerror = function(event) {
-    console.log("An error occurred in recognition: " + event.error);
+    console.log("Error occurred in recognition: " + event.error);
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    var link = document.getElementById('control');
+    // onClick's logic below:
+    link.addEventListener('click', function() {
+        console.log("begin");
+    });
+});
