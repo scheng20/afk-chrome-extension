@@ -2,6 +2,7 @@
 // Web-speech API adapted from https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API
 
 // Web-speech API setup
+
 var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition
 var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList
 var SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent
@@ -14,7 +15,6 @@ var speechRecognitionList = new SpeechGrammarList();
 
 recognition.continuous = true;
 recognition.grammars = speechRecognitionList;
-//recognition.continuous = false;
 recognition.lang = 'en-US';
 recognition.interimResults = false;
 recognition.maxAlternatives = 1;
@@ -47,8 +47,6 @@ function split(text) {
     var n = text.split(" ").splice(-3);
     return n;
 }
-
-recognition.start();
 
 recognition.onresult = function(event) {
 
@@ -115,10 +113,12 @@ recognition.onerror = function(event) {
     console.log("Error occurred in recognition: " + event.error);
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    var link = document.getElementById('control');
-    // onClick's logic below:
-    link.addEventListener('click', function() {
-        console.log("begin");
+chrome.storage.onChanged.addListener(function() {
+    chrome.storage.local.get('enabled', data => {
+        if (data.enabled) {
+            recognition.start();
+        } else {
+            recognition.abort();
+        }
     });
 });
