@@ -29,9 +29,3 @@ document.addEventListener('DOMContentLoaded', function() {
 function helloWorld() {
 	alert("helo!");
 }*/
-
-// Things to tackle:
-// - Somehow webspeech API stops working when we interact with the popup
-// - We need to figure out a way to turn on and off the speech recognition API via the popup
-// - Make the popup look pretty
-// - Branching?

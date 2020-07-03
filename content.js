@@ -26,7 +26,7 @@ var lastwords;
 // Getting text via scroll:
 window.onscroll = function(e) {
 
-	console.log("SCRAPING HTML:")
+	//console.log("SCRAPING HTML:")
 
 	// Rough estimate of where the bottom of the page is
 	let botX = document.documentElement.clientWidth - 100;
@@ -38,8 +38,8 @@ window.onscroll = function(e) {
 	//console.log(split(text));
 	lastwords = split(text).join(" ").toLowerCase();
 	lastwords = lastwords.substring(0, lastwords.length - 1);
-	console.log(lastwords);
-	console.log(typeof lastwords);
+	//console.log(lastwords);
+	//console.log(typeof lastwords);
 }
 
 // Split the words
@@ -60,25 +60,17 @@ recognition.onresult = function(event) {
         case "go up":
              window.scrollBy(0, -500);
             break;
+
         case "scroll up":
              window.scrollBy(0, -500);
             break;
+
         case "go down":
             window.scrollBy(0, 500);
             break;
+            
           case "scroll down":
             window.scrollBy(0, 500);
-            break;
-
-        case "open tab":
-            window.open('https://devpost.com/software/afk-bec9g1');
-            break;
-        case "new tab":
-            window.open('https://devpost.com/software/afk-bec9g1');
-            break;
-
-        case "close tab":
-            window.close();
             break;
 
         case "go back":
@@ -109,16 +101,53 @@ recognition.onnomatch = function(event) {
     console.log("Unrecognized word");
 }
 
+// To By-pass speech timeout
 recognition.onerror = function(event) {
     console.log("Error occurred in recognition: " + event.error);
+
+    recognition.stop();
+
+    chrome.storage.local.get('enabled', data => {
+        if (data.enabled) {
+            recognition.start();
+        }
+    });
 }
 
-chrome.storage.onChanged.addListener(function() {
+// To By-pass speech timeout
+recognition.onspeechend = function() {
+
+    recognition.abort();
+
+    chrome.storage.local.get('enabled', data => {
+        if (data.enabled) {
+            recognition.start();
+        }
+    });
+}
+
+recognition.onstart = function() {
+    console.log("recognition started");
+}
+
+recognition.onend = function(){
+    console.log("recognition ended");
+}
+
+function toggle() {
     chrome.storage.local.get('enabled', data => {
         if (data.enabled) {
             recognition.start();
         } else {
-            recognition.abort();
+            recognition.stop();
         }
     });
+}
+
+// Listener for button change
+chrome.storage.onChanged.addListener(function() {
+    toggle();
 });
+
+// Initial toggle
+toggle();
