@@ -1,9 +1,70 @@
+/*images*/
 body {
-	width: 250px;
-	height: 200px;
+	position: bottom;
+	width: 351px;
+	height: 330px;
+	
+	background-image: url("images/bg.jpg");
+	background-color: #FFFFFF;
+	
 }
 
+.center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 20%;
+}
+
+img {
+	display: block;
+  	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 30px;
+  	width: 20%;
+}
+
+/* text */
+/* montserrat: 400,500,700,900*/
+
 h1 {
-	font-size: 1.5rem;
-	color: #5794b5;
+
+	margin-left: 18px;
+
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 14px;
+	line-height: 20px;
+
+	/* identical to box height */
+
+	color: #2D66BC;
+}
+
+ul {
+	list-style-type: none;
+}
+
+li::before {
+	content: "-"; 
+	color: #2D66BC;
+	display: inline-block; 
+	width: 1.2em;
+	margin-left: -1.5em
+}
+
+
+li {
+
+	margin-right: 13px;
+
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 24px;
+
+	color: #2D66BC;
+
 }
