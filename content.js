@@ -56,44 +56,33 @@ recognition.onresult = function(event) {
     console.log('Input recieved: ' + cmd);
     console.log('Confidence: ' + (event.results[0][0].confidence) * 100 + "%");
 
-    switch (cmd) {
-        case "go up":
-             window.scrollBy(0, -500);
-            break;
+    if (cmd == "go up" || cmd == "scroll up" || cmd == "up") {
 
-        case "scroll up":
-             window.scrollBy(0, -500);
-            break;
+        window.scrollBy(0, -500);
 
-        case "go down":
-            window.scrollBy(0, 500);
-            break;
-            
-          case "scroll down":
-            window.scrollBy(0, 500);
-            break;
+    } else if (cmd == "go down" || cmd == "scroll down" || cmd == "down") {
 
-        case "go back":
-            window.history.go(-1);
-            break;
+        window.scrollBy(0, 500);
 
-        case "go forward":
-            window.history.go(1);
-            break;
+    } else if (cmd == "go back" || cmd == "back") {
 
-        case "refresh":
-             window.location.reload(true);
-             break;
-        case "reload":
-            window.location.reload(true);
-             break;
+        window.history.go(-1);
 
-        case lastwords:
-             window.scrollBy(0, 500);
-             break;
+    } else if (cmd == "go forward" || cmd == "forward") {
 
-        default:
-            console.log("Unrecognized command");
+        window.history.go(1);
+
+    } else if (cmd == "refresh" || cmd == "reload") {
+
+        window.location.reload(true);
+
+    } else if (cmd == lastwords) {
+
+        window.scrollBy(0, 500);
+
+    } else {
+
+        console.log("Unrecognized command");
     }
 }
 
