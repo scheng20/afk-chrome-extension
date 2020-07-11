@@ -1,11 +1,20 @@
-/*images*/
+
+
+/* images */
+/* ECF3FF */
+
 body {
 	position: bottom;
-	width: 351px;
-	height: 330px;
+	width: 350px;
+	height: 290px;
+
+	font-family: 'Montserrat';
+	font-style: normal;
 	
 	background-image: url("images/bg.jpg");
 	background-color: #FFFFFF;
+	/* understand what the button and how to change the javascript 
+	portion / what part of the code is responsible for it */
 	
 }
 
@@ -18,22 +27,110 @@ body {
 
 img {
 	display: block;
+	margin-top: 20px;
   	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: 30px;
   	width: 20%;
 }
 
+/* button {
+	position: right;
+	margin-left: 310px;
+	margin-bottom: 0px;
+
+	background: url("images/on.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 70%; 
+	cursor:pointer;
+    border:none;
+    width:35px;
+    height:35px;
+	border-radius: 5px;
+}
+
+button:hover {
+	background-color: #C8DBFF;
+} */
+
+/* switch */
+/* The switch - the box around the slider */
+.switch {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	width: 40px;
+	height: 21px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+	display:none;
+  }
+  
+  /* The slider */
+  .slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #91C1FF;
+	-webkit-transition: .4s;
+	transition: .4s;
+  } 
+  
+  .slider:before {
+	position: absolute;
+	content: "";
+	height: 15px;
+	width: 15px;
+	left: 4px;
+	bottom: 3px;
+	background-color: white;
+	-webkit-transition: .4s;
+	transition: .4s;
+  }
+  
+  input:checked + .slider {
+	background-color: #bfd7ff;
+  }
+  
+  input:focus + .slider {
+	box-shadow: 0 0 1px #bfd7ff;
+  }
+  
+  input:checked + .slider:before {
+	-webkit-transform: translateX(16px);
+	-ms-transform: translateX(16px);
+	transform: translateX(16px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+	border-radius: 34px;
+  }
+  
+  .slider.round:before {
+	border-radius: 50%;
+  }
+
+  
+
+
+
 /* text */
 /* montserrat: 400,500,700,900*/
 
-h1 {
 
+h1 {
 	margin-left: 18px;
 
-	font-family: 'Montserrat';
-	font-style: normal;
-	font-weight: 700;
+	/* font-family: 'Montserrat';
+	font-style: normal; */
+	font-weight: 500;
 	font-size: 14px;
 	line-height: 20px;
 
@@ -51,20 +148,21 @@ li::before {
 	color: #2D66BC;
 	display: inline-block; 
 	width: 1.2em;
-	margin-left: -1.5em
+	margin-left: -2.0em
 }
 
 
 li {
-
 	margin-right: 13px;
 
-	font-family: 'Montserrat';
-	font-style: normal;
+	/* font-family: 'Montserrat';
+	font-style: normal; */
 	font-weight: 400;
 	font-size: 12px;
 	line-height: 24px;
 
 	color: #2D66BC;
-
 }
+
+
+
