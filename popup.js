@@ -7,12 +7,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     chrome.storage.local.get('enabled', data => {
 	    enabled = !!data.enabled;
-	    toggleButton.textContent = enabled ? 'Disable' : 'Enable';
+	    //toggleButton.textContent = enabled ? 'Disable' : 'Enable';
 	});
 
-    toggleButton.addEventListener('click', function() {
+    toggleButton.addEventListener('change', function() {
          enabled = !enabled;
-         toggleButton.textContent = enabled ? 'Disable' : 'Enable';
+         //toggleButton.textContent = enabled ? 'Disable' : 'Enable';
          chrome.storage.local.set({enabled:enabled});
     });
 });
