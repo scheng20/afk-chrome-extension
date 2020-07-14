@@ -7,25 +7,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     chrome.storage.local.get('enabled', data => {
 	    enabled = !!data.enabled;
-	    //toggleButton.textContent = enabled ? 'Disable' : 'Enable';
+	    toggleButton.checked = enabled;
 	});
 
-    toggleButton.addEventListener('change', function() {
+    toggleButton.addEventListener('click', function() {
          enabled = !enabled;
-         //toggleButton.textContent = enabled ? 'Disable' : 'Enable';
+
+         toggleButton.checked = enabled;
          chrome.storage.local.set({enabled:enabled});
     });
 });
-
-/*
-document.addEventListener('DOMContentLoaded', function() {
-    var link = document.getElementById('toggle');
-    // onClick's logic below:
-    link.addEventListener('click', function() {
-        helloWorld();
-    });
-});
-
-function helloWorld() {
-	alert("helo!");
-}*/

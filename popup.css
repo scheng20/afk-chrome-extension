@@ -1,5 +1,3 @@
-
-
 /* images */
 /* ECF3FF */
 
@@ -13,9 +11,6 @@ body {
 	
 	background-image: url("images/bg.jpg");
 	background-color: #FFFFFF;
-	/* understand what the button and how to change the javascript 
-	portion / what part of the code is responsible for it */
-	
 }
 
 .center {
@@ -23,6 +18,12 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 	width: 20%;
+}
+
+.below {
+	margin-top: 25px;
+	color: #2D66BC;
+	text-align: center;
 }
 
 img {
@@ -62,27 +63,27 @@ button:hover {
 	top: 10px;
 	width: 40px;
 	height: 21px;
-  }
+}
   
-  /* Hide default HTML checkbox */
-  .switch input {
+/* Hide default HTML checkbox */
+.switch input {
 	display:none;
-  }
-  
-  /* The slider */
-  .slider {
+}
+
+/* The slider */
+.slider {
 	position: absolute;
 	cursor: pointer;
 	top: 0;
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background-color: #91C1FF;
+	background-color: #bfd7ff;
 	-webkit-transition: .4s;
 	transition: .4s;
-  } 
-  
-  .slider:before {
+} 
+
+.slider:before {
 	position: absolute;
 	content: "";
 	height: 15px;
@@ -92,44 +93,36 @@ button:hover {
 	background-color: white;
 	-webkit-transition: .4s;
 	transition: .4s;
-  }
-  
-  input:checked + .slider {
-	background-color: #bfd7ff;
-  }
-  
-  input:focus + .slider {
+}
+
+input:checked + .slider {
+	background-color: #91C1FF;
+}
+
+input:focus + .slider {
 	box-shadow: 0 0 1px #bfd7ff;
-  }
-  
-  input:checked + .slider:before {
+}
+
+input:checked + .slider:before {
 	-webkit-transform: translateX(16px);
 	-ms-transform: translateX(16px);
 	transform: translateX(16px);
-  }
-  
-  /* Rounded sliders */
-  .slider.round {
+}
+
+/* Rounded sliders */
+.slider.round {
 	border-radius: 34px;
-  }
-  
-  .slider.round:before {
+}
+
+.slider.round:before {
 	border-radius: 50%;
-  }
-
-  
-
-
+}
 
 /* text */
 /* montserrat: 400,500,700,900*/
 
-
 h1 {
 	margin-left: 18px;
-
-	/* font-family: 'Montserrat';
-	font-style: normal; */
 	font-weight: 500;
 	font-size: 14px;
 	line-height: 20px;
@@ -154,15 +147,9 @@ li::before {
 
 li {
 	margin-right: 13px;
-
-	/* font-family: 'Montserrat';
-	font-style: normal; */
 	font-weight: 400;
 	font-size: 12px;
 	line-height: 24px;
 
 	color: #2D66BC;
 }
-
-
-
