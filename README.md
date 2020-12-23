@@ -6,6 +6,8 @@ AFK or Away From Keyboard is a chrome extension that allows users to control the
 ## :star: Introduction 
 We wanted to create something that anyone can use AFK for chrome. Whether it be for accessibility reasons -- such as for those with disabilities that can't use the keyboard -- or for daily use when you're cooking, our aim was to make scrolling and Chrome browsing easier.
 
+<img src="images/AFK%20Demo.gif" width="800" title="Banner">
+
 ## :pushpin: Features 
 * Toggle voice recognition on/off using button on UI
 * Scroll through page by saying "go down/up"
